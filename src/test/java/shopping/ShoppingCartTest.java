@@ -5,10 +5,8 @@ import com.superbravo.models.Product;
 import com.superbravo.pages.AppPage;
 import io.qameta.allure.*;
 import io.qameta.allure.model.Status;
-import listener.CloseAndOpenListener;
 import listener.ExecutionListener;
 import org.testng.annotations.BeforeClass;
-import org.testng.annotations.BeforeTest;
 import org.testng.annotations.Listeners;
 import org.testng.annotations.Test;
 
@@ -78,7 +76,7 @@ public class ShoppingCartTest {
     @Step("Buscar producto")
     void searchProduct(String product){
         pages.homePage.searchProduct(product);
-        pages.basePage.awaitLoading(5);
+        pages.basePage.awaitLoading(50);
         Allure.addByteAttachmentAsync("Busqueda del producto", "image/png", () -> pages.takeScreenshot());
     }
 

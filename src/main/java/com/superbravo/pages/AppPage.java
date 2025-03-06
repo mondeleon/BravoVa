@@ -14,6 +14,7 @@ public class AppPage {
     public HomePage homePage;
     public ProductPage productPage;
     public CartPage cartPage;
+    public ConfirmationPage confirmationPage;
 
     private AppPage(AppiumDriver driver){
         MobileActions actions = new MobileActions(driver);
@@ -22,11 +23,11 @@ public class AppPage {
         homePage = new HomePage(actions);
         productPage = new ProductPage(actions);
         cartPage = new CartPage(actions);
-
+        confirmationPage = new ConfirmationPage(actions);
     }
 
     public static AppPage getInstance(){
-        if(_instance == null){
+        if (_instance == null) {
             AndroidDriver driver = DriverManager.getDriver();
             _instance = new AppPage(driver);
         }

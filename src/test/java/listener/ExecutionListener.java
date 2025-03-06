@@ -8,7 +8,7 @@ public class ExecutionListener implements IExecutionListener {
     @Override
     public void onExecutionStart() {
         DriverManager.setUpAppiumSever();
-        DriverManager.setUpDriver("RF8MA0Z6CWZ");
+        DriverManager.setUpDriver("emulator-5554");
         DriverManager.startApplication();
     }
 

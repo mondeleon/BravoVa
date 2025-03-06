@@ -98,6 +98,6 @@ public class CartPage {
 
     public Cart getCart(){
         List<Product> products = getProducts();
-        return  new Cart(products);
+        return new Cart(products);
     }
 }

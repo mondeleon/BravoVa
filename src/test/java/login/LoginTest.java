@@ -81,14 +81,14 @@ public class LoginTest {
         pages.loginPage.setPassword(password);
         Allure.addByteAttachmentAsync("Pantalla de inicio de sesión", "image/png", () -> pages.takeScreenshot());
         pages.loginPage.tapLogin();
-        pages.awaitProcessing(3);
+        pages.awaitProcessing(10);
     }
 
     @Step("Saltar biómetría")
     public void skipBiometry() {
         Allure.addByteAttachmentAsync("Acceso biómetrico", "image/png", () -> pages.takeScreenshot());
         pages.loginPage.skipBiometry();
-        pages.awaitProcessing(3);
+        pages.awaitProcessing(10);
     }
 
     @Step("Validar correcto inicio de sesión")

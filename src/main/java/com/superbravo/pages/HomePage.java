@@ -38,7 +38,7 @@ public class HomePage {
     }
 
     public boolean waitForPagePresent(){
-        return actions.waitForElementPresent(SHOPPING_CAR, 10);
+        return actions.waitForElementPresent(SHOPPING_CAR, 50);
     }
 
     public int getNumberOfArticles(){

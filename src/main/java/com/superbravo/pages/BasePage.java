@@ -24,12 +24,19 @@ public class BasePage {
         if (actions.isElementPresent(PROGRESS_BAR, 1)){
            return actions.waitForElementNotPresent(PROGRESS_BAR, timeOut);
         }
-        //System.out.println(actions.driver.getPageSource());
         return true;
     }
 
     public BasePage goBack(){
         actions.tapElement(GO_BACK);
+        return this;
+    }
+
+    public BasePage goBack(int taps){
+        for (int i = 0; i < taps; i++) {
+            actions.waitForElementPresent(GO_BACK, 10);
+            actions.tapElement(GO_BACK);
+        }
         return this;
     }
 

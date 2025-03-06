@@ -133,18 +133,18 @@ public class MobileActions {
     }
 
     public void scrollAndClick(String visibleText) {
-        scroll(visibleText, 0).click();
+        scrollToText(visibleText, 0).click();
     }
 
     public void scrollAndClick(String visibleText, int index) {
-        scroll(visibleText, index).click();
+        scrollToText(visibleText, index).click();
     }
 
     public WebElement scroll(String visibleText) {
-        return scroll(visibleText, 0);
+        return scrollToText(visibleText, 0);
     }
 
-    public WebElement scroll(String visibleText, int index) {
+    public WebElement scrollToText(String visibleText, int index) {
         By selector = AppiumBy.androidUIAutomator("new UiScrollable(new UiSelector().scrollable(true).instance(0)).scrollIntoView(new UiSelector().textContains(\""+visibleText+"\").instance( " + index +"))");
         return driver.findElement(selector);
     }
